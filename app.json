@@ -1,6 +1,6 @@
 {
-  "name": "Getting Started with Gradle on Heroku",
-  "description": "A bare-bones Gradle app, which can easily be deployed to Heroku.",
+  "name": "Kradle",
+  "description": "Maven server in Kotlin for Heroku",
   "image": "heroku/gradle",
-  "addons": [ "heroku-postgresql" ]
+  "addons": []
 }

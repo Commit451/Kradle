@@ -2,6 +2,15 @@
 
 Maven server on Heroku
 
+## About
+A Kotlin [Spark](https://github.com/perwendel/spark) server, hosted on Heroku which uses Google Cloud Platform for storage
+
+## Setup
+
+## Thanks
+Thanks to [appengine-maven-repository](https://github.com/renaudcerrato/appengine-maven-repository) which helped a lot as a reference for creating this project
+
+
 License
 --------
 
