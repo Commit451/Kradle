@@ -1,10 +1,10 @@
 buildscript {
-    ext.kotlin_version = '1.0.6'
+    ext.kotlinVersion = '1.0.6'
     repositories {
         jcenter()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 
@@ -16,9 +16,10 @@ repositories {
 
 dependencies {
     compile 'org.slf4j:slf4j-jdk14:1.7.18'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     compile 'com.sparkjava:spark-core:2.5.5'
-    compile group: 'com.google.cloud', name: 'google-cloud-storage', version: '0.8.1-beta'
+    compile 'com.google.cloud:google-cloud-storage:0.8.1-beta'
+    compile 'com.squareup.okio:okio:1.11.0'
 
     testCompile 'junit:junit:4.12'
     testCompile 'com.squareup.okhttp3:okhttp:3.6.0'
@@ -29,6 +30,7 @@ sourceSets {
 }
 
 task execute(type:JavaExec) {
+    environment "GOOGLE_APPLICATION_CREDENTIALS", "credentials.json"
     main = 'com.commit451.kradle.App'
     classpath = sourceSets.main.runtimeClasspath
 }
