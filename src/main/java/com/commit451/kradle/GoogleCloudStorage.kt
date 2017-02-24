@@ -43,11 +43,12 @@ object GoogleCloudStorage {
         return response.parseAsString()
     }
 
-    fun putFile(path: String, bytes: ByteArray) {
+    fun putFile(path: String, contentType: String?, bytes: ByteArray) {
         val blobId = BlobId.of(bucketName, path)
-        val blobInfo = BlobInfo.newBuilder(blobId)
-                .setContentType("text/plain")
-                .build()
-        val blob = storage.create(blobInfo, bytes)
+        val blobInfoBuilder = BlobInfo.newBuilder(blobId)
+        contentType?.let {
+            blobInfoBuilder.setContentType(it)
+        }
+        storage.create(blobInfoBuilder.build(), bytes)
     }
 }
