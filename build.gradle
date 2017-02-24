@@ -16,9 +16,13 @@ repositories {
 
 dependencies {
     runtime "org.slf4j:slf4j-simple:1.7.12"
+
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'com.sparkjava:spark-core:2.5.5'
     compile group: 'com.google.cloud', name: 'google-cloud-storage', version: '0.8.1-beta'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'com.squareup.okhttp3:okhttp:3.6.0'
 }
 
 sourceSets {
