@@ -15,8 +15,7 @@ repositories {
 }
 
 dependencies {
-    runtime "org.slf4j:slf4j-simple:1.7.12"
-
+    compile 'org.slf4j:slf4j-jdk14:1.7.18'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'com.sparkjava:spark-core:2.5.5'
     compile group: 'com.google.cloud', name: 'google-cloud-storage', version: '0.8.1-beta'
@@ -27,4 +26,9 @@ dependencies {
 
 sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
+}
+
+task execute(type:JavaExec) {
+    main = 'com.commit451.kradle.App'
+    classpath = sourceSets.main.runtimeClasspath
 }
