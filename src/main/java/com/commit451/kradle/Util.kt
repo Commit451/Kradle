@@ -1,5 +1,6 @@
 package com.commit451.kradle
 
+import com.google.common.io.Resources
 import okio.Okio
 import java.io.File
 
@@ -17,5 +18,10 @@ object Util {
         sink.flush()
         sink.close()
         source.close()
+    }
+
+    fun loadResourceAsString(resourceName: String): String {
+        val url = Resources.getResource(resourceName)
+        return Resources.toString(url, Charsets.UTF_8)
     }
 }
