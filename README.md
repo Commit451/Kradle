@@ -16,6 +16,7 @@ https://developers.google.com/identity/protocols/application-default-credentials
 5. For Key type, select the JSON key option, then select Create. The file automatically downloads to your computer.
 6. Put the *.json file you just downloaded in a directory of your choosing. This directory must be private (you can't let anyone get access to this), but accessible to your web server code.
 7. Set the environment variable GOOGLE_APPLICATION_CREDENTIALS to the path of the JSON file downloaded.
+8. Enable billing on the project (storage bucket will still be free up to 5 GB)
 
 ### Bucket Setup
 https://cloud.google.com/appengine/docs/standard/java/googlecloudstorageclient/setting-up-cloud-storage
@@ -31,6 +32,7 @@ Run the app locally via
 ```gradle
 ./gradlew exec
 ```
+You can view the contents in the cloud [here](https://console.cloud.google.com/storage/browser)
 
 ## Docs
 - [Google Cloud Engine Storage](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/storage)

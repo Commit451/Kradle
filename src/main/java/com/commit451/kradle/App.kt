@@ -24,17 +24,17 @@ object App {
             LOGGER.info("GET with path: ${request.pathInfo()}")
             try {
                 val content = GoogleCloudStorage.getAsString(request.pathInfo())
-                response.body(content)
-                response.body()
+                System.out.println(content)
+                content
             } catch (e: Exception) {
+                LOGGER.error("Failed on GET", e)
                 if (e is HttpResponseException) {
                     response.status(e.statusCode)
-                    response.body(e.statusMessage)
+                    e.content
                 } else {
                     response.status(500)
-                    response.body("error")
+                     "Error"
                 }
-                response.body()
             }
         }
 

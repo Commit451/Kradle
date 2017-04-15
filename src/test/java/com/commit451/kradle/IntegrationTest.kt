@@ -19,10 +19,12 @@ class IntegrationTest {
     fun testHello() {
         val client = OkHttpClient()
         val request = Request.Builder()
-                .url("http://localhost:8080/hello")
+                .url("http://localhost:8080/com/test/testmodule/maven-metadata.xml")
                 .build()
         val response = client.newCall(request).execute()
         val text = response.body().string()
+        System.out.println(text)
+        Assert.assertTrue(text.contains("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"))
         Assert.assertEquals("Hello World!", text)
     }
 
