@@ -1,4 +1,4 @@
-package com.commit451.kradle
+package com.commit451.fetch
 
 import com.google.common.io.Resources
 import okio.Okio

@@ -35,7 +35,8 @@ Run the app locally via
 You can view the contents in the cloud [here](https://console.cloud.google.com/storage/browser)
 
 ## Docs
-- [Google Cloud Engine Storage](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/storage)
+- [Google Cloud Engine Storage](https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-storage)
+- https://github.com/firebase/firebase-admin-java
 
 ## Thanks
 Thanks to [appengine-maven-repository](https://github.com/renaudcerrato/appengine-maven-repository) which helped a lot as a reference for creating this project

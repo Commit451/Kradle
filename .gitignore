@@ -57,6 +57,4 @@ classes/
 hs_err_pid*
 
 # Custom
-repo/
-credentials.json
-src/main/java/resources/configuration.json
+fetch_gcloud.json

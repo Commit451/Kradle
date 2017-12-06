@@ -1,4 +1,4 @@
-package com.commit451.kradle
+package com.commit451.fetch.storage
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport
@@ -17,22 +17,22 @@ import java.util.*
  */
 object GoogleCloudStorage {
 
-    const val BASE_URL = "https://storage.googleapis.com/"
+    private const val BASE_URL = "https://storage.googleapis.com/"
 
     /** Global configuration of Google Cloud Storage OAuth 2.0 scope.  */
-    const val STORAGE_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control"
+    private const val STORAGE_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control"
 
-    val credential: GoogleCredential = GoogleCredential
+    private val credential: GoogleCredential = GoogleCredential
             .getApplicationDefault()
             .createScoped(Collections.singleton(STORAGE_SCOPE))
-    val httpTransport: HttpTransport = GoogleNetHttpTransport.newTrustedTransport()
-    val requestFactory: HttpRequestFactory = httpTransport.createRequestFactory(credential)
+    private val httpTransport: HttpTransport = GoogleNetHttpTransport.newTrustedTransport()
+    private val requestFactory: HttpRequestFactory = httpTransport.createRequestFactory(credential)
     var storage: Storage = StorageOptions.getDefaultInstance().service
 
     lateinit var bucketName: String
 
     fun init(bucketName: String) {
-        this.bucketName = bucketName
+        GoogleCloudStorage.bucketName = bucketName
     }
 
     fun getAsString(path: String): String {

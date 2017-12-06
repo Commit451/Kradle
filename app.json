@@ -1,6 +1,6 @@
 {
-  "name": "Kradle",
-  "description": "Maven server in Kotlin for Heroku",
+  "name": "fetch",
+  "description": "A fetching Maven server",
   "image": "heroku/gradle",
   "addons": []
 }

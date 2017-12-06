@@ -22,19 +22,23 @@ dependencies {
 
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 
-    implementation 'com.sparkjava:spark-core:2.5.5'
+    implementation 'com.sparkjava:spark-core:2.7.1'
 
-    implementation 'com.google.cloud:google-cloud-storage:0.13.0-beta'
+    implementation 'com.google.cloud:google-cloud-storage:1.12.0'
 
-    implementation 'com.squareup.okio:okio:1.12.0'
-    implementation 'com.squareup.moshi:moshi:1.4.0'
+    implementation 'com.google.firebase:firebase-admin:5.5.0'
+
+    implementation 'com.squareup.okio:okio:1.13.0'
+    implementation 'com.squareup.moshi:moshi:1.5.0'
+
+    implementation "io.reactivex.rxjava2:rxjava:2.1.7"
 
     testCompile 'junit:junit:4.12'
     testCompile 'com.squareup.okhttp3:okhttp:3.6.0'
 }
 
 task execute(type:JavaExec) {
-    environment "GOOGLE_APPLICATION_CREDENTIALS", "credentials.json"
-    main = 'com.commit451.kradle.App'
+    environment "GOOGLE_APPLICATION_CREDENTIALS", "fetch_gcloud.json"
+    main = 'com.commit451.fetch.App'
     classpath = sourceSets.main.runtimeClasspath
 }
